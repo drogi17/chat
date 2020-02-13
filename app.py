@@ -35,7 +35,7 @@ def login():
     where = ['name = "' + str(name) + '"']
     data = db.simple_select('users', '*', where)
     if not data:
-        data = { 'name': name, 'avatar': avatar(300, name)}
+        data = { 'name': name, 'avatar': avatar(name)}
         db.insert('users', data)
     resp = make_response({})
     resp.set_cookie('username', name)
@@ -52,7 +52,6 @@ def send_text():
         if emoj in data:
             data = data.replace(emoj, '<img src="' + amoji_dict[emoj] + '" title="' + emoj + '" class="emoji-img">')
     adr = str(request.cookies.get('username'))
-    print(adr)
     if adr == '':
         return {'exit': 1}
     where = ['name = "' + str(adr) + '"']
@@ -99,3 +98,21 @@ def get_messages():
     # for data_mess in data_to_send:
     #     send_list.append(data_mess)
     return {'text':data_to_send}
+
+port = 5000
+host = '127.0.0.1'
+if '--host' in sys.argv:
+    nomb = sys.argv.index('--host') + 1
+    try:
+        host=sys.argv[nomb]
+    except IndexError:
+        pass
+
+if '--port' in sys.argv:
+    nomb = sys.argv.index('--port') + 1
+    try:
+        port = int(sys.argv[nomb])
+    except:
+        pass
+
+app.run(debug=True, host=host, port=port)
