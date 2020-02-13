@@ -1,5 +1,4 @@
+hashlib
 flask
 Flask-WTF
 gunicorn
-hashlib
-werkzeug
