@@ -99,21 +99,3 @@ def get_messages():
     # for data_mess in data_to_send:
     #     send_list.append(data_mess)
     return {'text':data_to_send}
-
-port = 5000
-host = '127.0.0.1'
-if '--host' in sys.argv:
-    nomb = sys.argv.index('--host') + 1
-    try:
-        host=sys.argv[nomb]
-    except IndexError:
-        pass
-
-if '--port' in sys.argv:
-    nomb = sys.argv.index('--port') + 1
-    try:
-        port = int(sys.argv[nomb])
-    except:
-        pass
-
-app.run(debug=True, host=host, port=port)
