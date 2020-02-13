@@ -6,6 +6,10 @@ h3 {
 	font-family: 'Open Sans', sans-serif;
 }
 
+body {
+	background: #698ff0;
+}
+
  /* width */
 ::-webkit-scrollbar {
   width: 10px;
@@ -39,6 +43,7 @@ h3 {
 	background:#22303d;
 	color: #efeeee;
 	border-radius: .3rem;
+	box-shadow: 0 0 0.8rem #000; 
 }
 
 .chat-messages {
@@ -86,6 +91,7 @@ h3 {
 .user-text {
 	font-size: 1.1rem;
 	font-family: 'Open Sans', sans-serif;
+	background: 
 }
 
 .emoji-img {
@@ -112,15 +118,25 @@ div.message-block {
 	margin-bottom: 1%;
 }
 
-.message-text {
-	font-size: 13px;
-	max-width: 50%;
+.message-data {
+	max-width: 80%;
 	min-width: 10%;
-	background-color: #fff;
-	color: #22303d;
+	background-color: #efeeee;
 	border-radius: 10px;
 	word-wrap: break-word;
-	padding: 8px;
+	padding: 0.5rem;
+	margin-left: 0.5rem;
+	font-size: .9rem;
+	line-height: 1.2;
+}
+
+.message-user {
+	color: #22303d;
+	font-weight: bolder;
+}
+
+.message-text {
+	color: #22303d;
 }
 
 

@@ -14,8 +14,10 @@ function get_messages(){
                 // console.log(max);
                 while (i <= max-1) {
                     // console.log(text[i]);
-                    var img = "https://www.iphones.ru/wp-content/uploads/2017/02/AA-4.png"
-                    var html_element =  "<div class='message-block'><img src='" + text[i][1] + "' class='message-avatar'><p class='message-text'>" + text[i][2] + "</p></div>"
+                    var img = "https://www.iphones.ru/wp-content/uploads/2017/02/AA-4.png";
+                    var html_element =  "<div class='message-block'><img src='" + text[i][1] + 
+                                        "' class='message-avatar'><div class='message-data'><span class='message-user'>" + text[i][0] +
+                                        "</span><br><span class='message-text'>" + text[i][2] + "</span></div></div>";
                     html_to_add += html_element;
                     i++;
                 }
