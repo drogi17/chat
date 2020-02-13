@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+h3 {
+	/*font-family: 'Ubuntu', sans-serif;*/
+	font-family: 'Open Sans', sans-serif;
+}
+
+ /* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #22303d;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #1b2630;
+  border-radius: 7.5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #1b2630;
+} 
+
+.container {
+	padding: 15px;
+}
+
+.chat {
+	/*border:1px solid #333;*/
+	padding: 15px;
+	width:100%;
+	height:100%;
+	background:#22303d;
+	color: #efeeee;
+	border-radius: .3rem;
+}
+
+.chat-messages {
+	flex: 1 0 0;
+	overflow-y: auto;
+	overflow-x: auto;
+	margin-bottom: 15px;
+}
+
+#message_text {
+	border: 0;
+	background-color: #efeeee;
+	color: #22303d;
+	opacity: 90%;
+	color: #000;
+	border-radius: 24px 0 0 24px;
+	padding: .5rem 1.2rem;
+}
+
+#message_text:focus {
+	box-shadow: none;
+	color: #22303d;
+}
+
+#send-button {
+	background-color: #dadadc;
+	border: 0;
+	border-radius: 0 24px 24px 0;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	color: #162231;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bolder;
+}
+
+#send-button:active {
+	color: rgba(22, 34, 49, 0.8);
+	box-shadow: none;
+}
+
+#send-button:focus {
+	box-shadow: none;
+}
+
+.user-text {
+	font-size: 1.1rem;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.emoji-img {
+	vertical-align:middle;
+	width:25px;
+	margin:1px;
+	cursor:pointer;
+}
+
+.amoji-button{
+	width:38px;
+	height:38px;
+	margin-right: 1%;
+}
