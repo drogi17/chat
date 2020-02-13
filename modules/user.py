@@ -1,5 +1,11 @@
 # from werkzeug.security import generate_password_hash, check_password_hash
-from hashlib import md5
+# import requests, json
+
+
+# def md5(string):
+# 	md5 = requests.get('https://api.hashify.net/hash/md4/hex?value=' + string)
+# 	print(md5)
+# 	return md5
 
 # def set_password(password):
 #     return generate_password_hash(password)
@@ -8,6 +14,6 @@ from hashlib import md5
 #     return check_password_hash(password_hash, password)
 
 def avatar(size, email):
-    digest = md5(email.lower().encode('utf-8')).hexdigest()
+    digest = email
     return 'https://www.gravatar.com/avatar/{}?d=identicon&s={}'.format(
     digest, size)
