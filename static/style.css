@@ -100,3 +100,33 @@ h3 {
 	height:38px;
 	margin-right: 1%;
 }
+
+
+
+
+
+
+div.message-block {
+	display: flex;
+	align-items: flex-end;
+	margin-bottom: 1%;
+}
+
+.message-text {
+	font-size: 13px;
+	max-width: 50%;
+	min-width: 10%;
+	background-color: #fff;
+	color: #22303d;
+	border-radius: 10px;
+	word-wrap: break-word;
+	padding: 8px;
+}
+
+
+
+img.message-avatar {
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+}
