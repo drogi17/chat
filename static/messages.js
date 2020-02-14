@@ -5,7 +5,7 @@ var all_text = 0;
 
 $(document).ready(function() {
 
-    var socket = io.connect('wss:/');
+    var socket = io.connect('wss://my-chatik-alfa.herokuapp.com/');
 
     socket.on('connect', function() {
         socket.send({'data': ''});
