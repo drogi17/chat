@@ -69,11 +69,11 @@ def handleMessage(msg):
             data = data.replace(emoj, '<img src="' + amoji_dict[emoj] + '" title="' + emoj + '" class="emoji-img">')
     adr = str(request.cookies.get('username'))
     where = ['name = "' + str(adr) + '"']
-    try:
-        id_usr = db.simple_select('users', 'id', where)[0][0]
-        if data != "" and id_usr:
-            data_inc = {'user_id': id_usr, 'message': data}
-            db.insert('messages', data_inc)
+#     try:
+    id_usr = db.simple_select('users', 'id', where)[0][0]
+    if data != "" and id_usr:
+        data_inc = {'user_id': id_usr, 'message': data}
+        db.insert('messages', data_inc)
         if data in command_list:
             command = command_list.get(data)
             command('messages', '')
@@ -82,11 +82,11 @@ def handleMessage(msg):
             db.insert('messages', data_inc)
             send(['exit', 'username='+adr], broadcast=True)
         data_to_send = db.custom_request("""    SELECT users.name, users.avatar, messages.message
-                                                FROM messages 
-                                                INNER JOIN users ON messages.user_id = users.id;""")
+						FROM messages 
+						INNER JOIN users ON messages.user_id = users.id;""")
         send(data_to_send, broadcast=True)
-    except IndexError:
-        send(['exit', 'username='+adr], broadcast=True)
+#     except IndexError:
+#         send(['exit', 'username='+adr], broadcast=True)
 
 port = 5000
 host = '127.0.0.1'
