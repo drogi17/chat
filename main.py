@@ -29,7 +29,7 @@ def bytes_to_str(byte):
 db = DataBase('data/data.db')
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'mysecret'
-socketio = SocketIO(app)
+socketio = SocketIO(app, async_mode='threading')
 command_list = {
     '?clear': db.delete,
 }
