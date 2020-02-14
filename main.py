@@ -37,6 +37,8 @@ def index():
 @app.route('/login', methods=['POST'])
 def login():
     name = str(request.data.decode('utf-8')).replace("'", '"').replace('<', '&lt;').replace('>', '&gt;')
+    if name == 'SERVER':
+        return ''
     where = ['name = "' + str(name) + '"']
     data = db.simple_select('users', '*', where)
     if not data:
@@ -69,16 +71,16 @@ def handleMessage(msg):
         if data in command_list:
             command = command_list.get(data)
             command('messages', '')
-        elif data == '?exit' or not id_usr:
+        elif data == '?exit' or request.cookies.get('username') == '':
             data_inc = {'user_id': 0, 'message': '[' + str(adr) + '] LEFT'}
             db.insert('messages', data_inc)
-            send(['exit', 'username='+adr], broadcast=True)
+            send('exit')
         data_to_send = db.custom_request("""    SELECT users.name, users.avatar, messages.message
                                                 FROM messages 
                                                 INNER JOIN users ON messages.user_id = users.id;""")
         send(data_to_send, broadcast=True)
     except IndexError:
-        send(['exit', 'username='+adr], broadcast=True)
+        send('exit')
 
 port = 5000
 host = '127.0.0.1'
