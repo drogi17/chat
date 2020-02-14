@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+h3 {
+	/*font-family: 'Ubuntu', sans-serif;*/
+	font-family: 'Open Sans', sans-serif;
+}
+
+body {
+	background: #698ff0;
+	background: url(https://img3.goodfon.ru/wallpaper/nbig/3/1c/tekstura-stena-beton.jpg) 100% 100% no-repeat;
+    background-size: cover;
+}
+
+ /* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #22303d;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #1b2630;
+  border-radius: 7.5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #1b2630;
+} 
+
+.container {
+	padding: 15px;
+	display: flex;
+	height: 100%;
+}
+
+.chat-room {
+	padding: 15px;
+	height:100%;
+	background:#22303d;
+	color: #efeeee;
+	border-radius: .3rem;
+	box-shadow: 0 0 0.8rem #000;
+	margin-right: 15px;	
+}
+
+.chat-wrapper {
+	width:100%;
+	padding: 0;
+	border-radius: .3rem !important;
+	box-shadow: 0 0 0.8rem #000; 
+}
+
+.chat-header {
+	padding: 10px 15px;
+	color: #efeeee;
+	background: #1b2630;
+	font-size: 1.5rem;
+	font-weight: bolder;
+	border-radius: inherit;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.chat {
+	/*border:1px solid #333;*/
+	padding: 15px;
+	padding-top: 0;
+	width:100%;
+	height:100%;
+	background:#22303d;
+	color: #efeeee;
+	border-radius: inherit;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+.chat-messages {
+	flex: 1 0 0;
+	overflow-y: auto;
+	overflow-x: auto;
+	margin-bottom: 15px;
+}
+
+#message_text {
+	border: 0;
+	background-color: #efeeee;
+	color: #22303d;
+	opacity: 90%;
+	color: #000;
+	border-radius: 24px 0 0 24px;
+	padding: .5rem 1.2rem;
+}
+
+#message_text:focus {
+	box-shadow: none;
+	color: #22303d;
+}
+
+#send-button {
+	background-color: #dadadc;
+	border: 0;
+	border-radius: 0 24px 24px 0;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	color: #162231;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bolder;
+}
+
+#send-button:active {
+	color: rgba(22, 34, 49, 0.8);
+	box-shadow: none;
+}
+
+#send-button:focus {
+	box-shadow: none;
+}
+
+.user-text {
+	font-size: 1.1rem;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.emoji-img {
+	vertical-align:middle;
+	width:25px;
+	margin:1px;
+	cursor:pointer;
+}
+
+.amoji-button{
+	width:38px;
+	height:38px;
+	margin-right: 1%;
+}
+
+
+
+
+
+
+div.message-block {
+	display: flex;
+	align-items: flex-end;
+	margin: 8px 0;
+}
+
+.message-data {
+	max-width: 80%;
+	min-width: 10%;
+	background-color: #efeeee;
+	border-radius: 10px;
+	word-wrap: break-word;
+	padding: 0.5rem;
+	margin-left: 0.5rem;
+	font-size: .9rem;
+	line-height: 1.2;
+}
+
+.message-user {
+	color: #22303d;
+	font-weight: bolder;
+}
+
+.message-text {
+	color: #22303d;
+}
+
+
+
+img.message-avatar {
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+}
+
+
+
+
+
+
+.sidepanel {
+	height: 100%; /* Specify a height */
+	width: 0; /* 0 width - change this with JavaScript */
+	position: absolute; /* Stay in place */
+	z-index: 1; /* Stay on top */
+	background-color: #1b2630; /* Black*/
+	overflow-x: hidden; /* Disable horizontal scroll */
+	padding-top: 60px; /* Place content 60px from the top */
+	transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
+	border-radius: inherit;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+/* Position and style the close button (top right corner) */
+.closebtn {
+ 	position: absolute;
+ 	top: 10px;
+ 	right: 15px;
+ 	padding: 10px 15px;
+ 	font-size: 1.5rem;
+ 	color: #efeeee;
+ 	font-weight: normal;
+ 	background-color: inherit;
+ 	border: none;
+}
+
+/* Style the button that is used to open the sidepanel */
+.openbtn {
+ 	cursor: pointer;
+ 	background-color: inherit;
+ 	color: #efeeee;
+ 	padding: 10px 15px;
+  	border: none;
+}
+
+.openbtn:hover, .openbtn:focus, .openbtn:visited,
+.closebtn:hover, .closebtn:focus, .closebtn:visited 
+{
+ 	color: rgba(239, 238, 238, 0.8);
+ 	outline: none;
+}
