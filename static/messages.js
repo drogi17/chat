@@ -5,7 +5,7 @@ var all_text = 0;
 
 $(document).ready(function() {
 
-    var socket = io.connect('/');
+    var socket = io.connect('wss:/');
 
     socket.on('connect', function() {
         socket.send({'data': ''});
