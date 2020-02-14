@@ -86,49 +86,7 @@ def handleMessage(msg):
                                                 INNER JOIN users ON messages.user_id = users.id;""")
         send(data_to_send, broadcast=True)
     except IndexError:
-        send('exit', broadcast=True)
-        
-
-
-# @app.route('/send_text', methods=['POST'])
-# def send_text():
-#     data = str(request.data.decode('utf-8')).replace("'", '"').replace('<', '&lt;').replace('>', '&gt;')
-#     if len(data) > 1000:
-#         data = data[:1000]
-#     data = get_link_in_str(data)
-#     for emoj in amoji_dict:
-#         if emoj in data:
-#             data = data.replace(emoj, '<img src="' + amoji_dict[emoj] + '" title="' + emoj + '" class="emoji-img">')
-#     adr = str(request.cookies.get('username'))
-#     if adr == '':
-#         return {'exit': 1}
-#     where = ['name = "' + str(adr) + '"']
-#     try:
-#         id_usr = db.simple_select('users', 'id', where)[0][0]
-#         if data != "":
-#             data_inc = {'user_id': id_usr, 'message': data}
-#             db.insert('messages', data_inc)
-#         if data in command_list:
-#             command = command_list.get(data)
-#             command('messages', '')
-#         elif data == '?exit' or not id_usr:
-#             resp = make_response({'exit': 1})
-#             resp.set_cookie('username', '')
-#             data_inc = {'user_id': 0, 'message': '[' + str(adr) + '] LEFT'}
-#             db.insert('messages', data_inc)
-#             return resp
-#     except IndexError:
-#         resp = make_response({'exit': 1})
-#         resp.set_cookie('username', '')
-#         return resp
-#     return {'exit': 0}
-
-# @app.route('/get_messages', methods=['GET'])
-# def get_messages():
-#     data_to_send = db.custom_request("""   SELECT users.name, users.avatar, messages.message
-#                             FROM messages 
-#                             INNER JOIN users ON messages.user_id = users.id;""")
-#     return {'text':data_to_send}
+        send(['exit', 'username='+adr], broadcast=True)
 
 port = 5000
 host = '127.0.0.1'
