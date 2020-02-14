@@ -1,4 +1,3 @@
 flask
 Flask-WTF
 gunicorn
-flask_socketio
