@@ -1,15 +1,6 @@
 var check_mess = 1;
 var all_text = 0;
 
-function ord( string ) {
-    var bytes = [];
-    for(var i = 0; i < string.length; i++) {
-        var char = string.charCodeAt(i);
-        bytes.push(char);
-    }
-    return bytes;
-}
-
 
 
 $(document).ready(function() {
@@ -17,7 +8,7 @@ $(document).ready(function() {
     var socket = io.connect('/');
 
     socket.on('connect', function() {
-        socket.send({'data': ord('')});
+        socket.send({'data': ''});
     });
 
     socket.on('message', function(text) {
@@ -47,12 +38,12 @@ $(document).ready(function() {
     });
     $('#send-button').on('click', function() {
         var send_data = document.getElementById("message_text").value;
-        socket.send({'data':ord(send_data)});
+        socket.send({'data':send_data});
     });
     document.addEventListener('keydown', function(event) {
       if (event.code == 'Enter') {
         var send_data = document.getElementById("message_text").value;
-        socket.send({'data':ord(send_data)});
+        socket.send({'data':send_data});
       }
     });
 

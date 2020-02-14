@@ -59,7 +59,7 @@ def login():
 @socketio.on('message')
 def handleMessage(msg):
     # print(msg)
-    msg = bytes_to_str(msg['data'])
+    msg = msg['data']
     data = str(msg).replace("'", '"').replace('<', '&lt;').replace('>', '&gt;')
     if len(data) > 1000:
         data = data[:1000]
