@@ -21,7 +21,7 @@ $(document).ready(function() {
     });
 
     socket.on('message', function(text) {
-        console.log(text[0] == 'exit' && text[1] == document.cookie);
+        // console.log(text[0] == 'exit' && text[1] == document.cookie);
         if (text[0] == 'exit' && text[1] == document.cookie){
             document.cookie = "username="
             window.location.href = '/';
