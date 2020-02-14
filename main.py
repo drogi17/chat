@@ -16,16 +16,6 @@ def get_link_in_str(string):
                 string = string.replace(all_words, '<a href="' + all_words + '" target="_blank">' + all_words.replace('http://', '') + '</a>')
     return string
 
-def bytes_to_str(byte):
-    string = ""
-    if byte:
-        for or_d in byte:
-            string += chr(or_d)
-        # print(string)
-        return string
-    else:
-        return ''
-
 db = DataBase('data/data.db')
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'mysecret'
@@ -58,8 +48,7 @@ def login():
 
 @socketio.on('message')
 def handleMessage(msg):
-    # print(msg)
-    msg = bytes_to_str(msg['data'])
+    msg = msg['data']
     data = str(msg).replace("'", '"').replace('<', '&lt;').replace('>', '&gt;')
     if len(data) > 1000:
         data = data[:1000]
