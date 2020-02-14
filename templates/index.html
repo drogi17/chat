@@ -6,9 +6,9 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-        <script src="{{ url_for('static', filename='post.js') }}?v_27"></script>
-        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v_127">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
+        <script src="{{ url_for('static', filename='messages.js') }}?v_42"></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v_126">
     </head>
     <body class="container">
         <div class='chat d-flex flex-column'>
@@ -20,14 +20,9 @@
             <div class="input-group">
                 <!-- <img src='https://www.iphones.ru/wp-content/uploads/2017/02/AA-4.png' title="emojis" class='amoji-button' id='emoji-button'> -->
                 <input type='text' id='message_text' class='form-control' title="Введите сообщение" placeholder='Введите сообщение'>
-                <button type="button" class="btn btn-secondary" id="send-button" title="Отправить" onclick="send();get_messages()"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                <button type="button" class="btn btn-secondary" id="send-button" title="Отправить" ><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
             </div>
             <!-- </div> -->
         </div>
-        <!-- <script type="text/javascript">
-            var objDiv = document.getElementById("chat-messages");
-            objDiv.scrollTop = objDiv.scrollHeight;
-        </script> -->
-        <script src="{{ url_for('static', filename='get_messages.js') }}?v_42"></script>
     </body>
 </shtml>
