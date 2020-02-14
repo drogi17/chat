@@ -30,7 +30,6 @@ db = DataBase('data/data.db')
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'mysecret'
 socketio = SocketIO(app, async_mode='threading')
-socketio.run()
 command_list = {
     '?clear': db.delete,
 }
