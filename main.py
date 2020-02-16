@@ -69,7 +69,7 @@ def get_chats():
 
 @app.route('/login', methods=['POST'])# Регистрация пользователей
 def login():
-    name = str(request.data.decode('utf-8')).replace("'", '"').replace('<', '&lt;').replace('>', '&gt;')# получение данных с формы регистрации
+    name = str(request.data.decode('utf-8')).replace('<', '&lt;').replace('>', '&gt;')# получение данных с формы регистрации
     if name == 'SERVER' or name == '': 
         return ''
     data = db.request("""SELECT id                          
@@ -97,7 +97,7 @@ def handleMessage(msg):
         send('exit')
     chat = msg.get('chat').replace('%20', ' ')                                  ###
     msg = msg.get('data')                                                       ### КОНЧЕНЫЕ ДЕЙСТВИЯ
-    data = str(msg).replace("'", '"').replace('<', '&lt;').replace('>', '&gt;') ###
+    data = str(msg).replace('<', '&lt;').replace('>', '&gt;') ###
     adr = str(request.cookies.get('username'))
     if len(data) > 1000:            # Проверка на размер сообщения
         data = data[:1000]

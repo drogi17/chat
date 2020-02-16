@@ -7,7 +7,13 @@ class DataBase:
 
     def request(self, request, args=None):
         if args:
-            request_data = self.cursor.execute(request% args).fetchall()
+            args_to_add = ()
+            if type(args).__name__ == 'tuple' or type(args).__name__ == 'list':
+                for arg in args:
+                    args_to_add += (arg.replace('"', '&#34;').replace("'", '&#39;'), )
+            elif type(args).__name__ == 'str':
+                args_to_add = (args.replace('"', '&#34;').replace("'", '&#39;'))
+            request_data = self.cursor.execute(request% args_to_add).fetchall()
         else:
             request_data = self.cursor.execute(request).fetchall()
         self.conn.commit()
