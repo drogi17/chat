@@ -8,6 +8,11 @@
     <script src="{{ url_for('static', filename='login.js') }}?v_8"></script>
 </head>
 <body>  
+    <script>
+    if (window.location.protocol=="https:"){
+             window.location.protocol="http";
+     }
+    </script>
     <div class="login-page">
       <div class="form container">
           <input type="text" placeholder="username" id="username"/>
